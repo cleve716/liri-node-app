@@ -2,9 +2,9 @@ require("dotenv").config();
 //var keys = require("./keys.js");
 //var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
-//var = getMovieData;
+var movieTitle = process.argv.slice(2).join(" ");
 
-axios.get("http://www.omdbapi.com/?t=fuel&plot=short&apikey=trilogy").then(
+axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&plot=short&apikey=trilogy").then(
     function (response) {
         console.log("Title: " + response.data.Title);
         console.log("Year released: " + response.data.Year);
