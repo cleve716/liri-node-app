@@ -1,10 +1,17 @@
 require("dotenv").config();
-//var keys = require("./keys.js");
+var keys = require("./keys.js");
 //var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
-var movieTitle = process.argv.slice(2).join(" ");
+var moment = require("moment");
+var fs = require("fs");
+var command = process.argv[2];
+var searchWords = process.argv.slice(3).join(" ");
 
-axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&plot=short&apikey=trilogy").then(
+
+
+function getMovie(movie){
+
+axios.get("http://www.omdbapi.com/?t=" + movie + "&plot=short&apikey=trilogy").then(
     function (response) {
         console.log("Title: " + response.data.Title);
         console.log("Year released: " + response.data.Year);
@@ -14,6 +21,32 @@ axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&plot=short&apikey=trilog
         console.log("Language: " + response.data.Language);
         console.log("Plot: " + response.data.Plot);
         console.log("Actors: " + response.data.Actors);
+    });
+}
 
-    }
-);
+
+
+
+switch(command){
+case "movie-this":
+getMovie(searchWords);
+
+break;
+case "concert-this":
+
+
+break;
+case "spotify-this-song":
+
+
+break;
+case "do what it says":
+
+
+break;
+
+default:
+return console.log("not a valid command");
+}
+
+
