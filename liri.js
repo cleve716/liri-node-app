@@ -37,12 +37,19 @@ function getBand(band) {
         function (response) {
 
             if (response.data[0] != undefined) {
-                console.log("Venue: " + response.data[0].venue.name);
-                console.log("City: " + response.data[0].venue.city);
-                console.log("Day, date, and time: " + moment(response.data[0].datetime).format("LLLL"));
+
+                for (var i = 0; i < response.data.length; i++) {
+                    console.log();
+                    console.log("Lineup: " + response.data[i].lineup);
+                    console.log("Venue: " + response.data[i].venue.name);
+                    console.log("City: " + response.data[i].venue.city);
+                    console.log("Day, date, and time: " + moment(response.data[i].datetime).format("LLLL"));
+                    console.log("__________________________________");
+                }
             }
             else {
                 console.log("Looks like " + band + " aren't on the road right now... :-(");
+
             }
         });
 }
