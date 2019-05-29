@@ -57,37 +57,51 @@ function getBand(band) {
 }
 
 function getSong(song) {
-//var getTrack;
-    if (song === undefined) {
-        song = "The Sign";
-    } else{
-        song;
+
+
+    if (song === undefined || null) {
+        getSong("The Sign Ace of Base");
+        console.log(getsong);
     }
+
+
     spotify.search(
-        { 
+        {
             type: 'track',
             query: song
-         },
+        },
         function (err, data) {
             if (err) {
-                console.log("Error: " + err);
+                console.log("Error details: " + err);
                 return;
-            }
 
-            for (var i = 0; i < data.tracks.items.length; i++) {
-                console.log();
-                console.log(i);
-                console.log("Artist: " + data.tracks.items[i].artists[0].name);
-                console.log("Song: " + data.tracks.items[i].name);
-                console.log("Preview: " + data.tracks.items[i].preview_url);
-                console.log("Album: " + data.tracks.items[i].album.name);
-                console.log("__________________________________");
-            
-        
+
+
+            }
+            else {
+
+                for (var i = 0; i < data.tracks.items.length; i++) {
+                    console.log();
+                    console.log(i);
+                    console.log("Artist: " + data.tracks.items[i].artists[0].name);
+                    console.log("Song: " + data.tracks.items[i].name);
+                    console.log("Preview: " + data.tracks.items[i].preview_url);
+                    console.log("Album: " + data.tracks.items[i].album.name);
+                    console.log("__________________________________");
+                }
             }
         }
     );    
-};
+}
+
+// function getText(){
+// 	fs.readFile('random.txt', 'utf8', function(err, data){
+// 		if (err){ 
+// 			return console.log(err);
+// 		}
+//         var dataArr = data.split(',');
+//        //need dataArr[0] and dataArr[1] to follow (command) & (searchWords)
+// 	});
 
 
 
@@ -106,8 +120,8 @@ switch (command) {
 
 
         break;
-    case "do what it says":
-
+    case "do-what-it-says":
+        getText();
 
         break;
 
