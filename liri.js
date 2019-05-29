@@ -1,6 +1,7 @@
 require("dotenv").config();
 var keys = require("./keys.js");
-//var spotify = new Spotify(keys.spotify);
+var Spotify = require("node-spotify-api");
+var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
 var moment = require("moment");
 var fs = require("fs");
@@ -26,6 +27,7 @@ function getMovie(movie) {
 
             }
             else {
+                console.log("since you didn't make a choice, the best movie of all time is... drum roll please... : ")
                 getMovie("Lawrence of Arabia");
             }
         });
@@ -54,6 +56,39 @@ function getBand(band) {
         });
 }
 
+function getSong(song) {
+var getTrack;
+    if (song === undefined) {
+        getTrack = "The Sign";
+    } else{
+        getTrack = song;
+    }
+    spotify.search(
+        { 
+            type: 'track',
+            query: getTrack
+         },
+        function (err, data) {
+            if (err) {
+                console.log("Error: " + err);
+                return;
+            }
+
+            for (var i = 0; i < data.tracks.items.length; i++) {
+                console.log();
+                console.log(i);
+                console.log("Artist: " + data.tracks.items[i].artists[0].name);
+                console.log("Song: " + data.tracks.items[i].name);
+                console.log("Preview: " + data.tracks.items[i].preview_url);
+                console.log("Album: " + data.tracks.items[i].album.name);
+                console.log("__________________________________");
+            
+        
+            }
+        }
+    );    
+};
+
 
 
 
@@ -67,6 +102,7 @@ switch (command) {
 
         break;
     case "spotify-this-song":
+        getSong(searchWords);
 
 
         break;
