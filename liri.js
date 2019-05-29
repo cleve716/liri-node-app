@@ -57,16 +57,16 @@ function getBand(band) {
 }
 
 function getSong(song) {
-var getTrack;
+//var getTrack;
     if (song === undefined) {
-        getTrack = "The Sign";
+        song = "The Sign";
     } else{
-        getTrack = song;
+        song;
     }
     spotify.search(
         { 
             type: 'track',
-            query: getTrack
+            query: song
          },
         function (err, data) {
             if (err) {
