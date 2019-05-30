@@ -26,7 +26,7 @@ function getMovie(movie) { // function for OMDB
                 console.log("Actors: " + response.data.Actors);
 
             }
-            else { // default to the best movie ever made
+            else { // default to the best movie ever made, if no movie is selected
                 console.log("since you didn't make a choice, the best movie of all time is... drum roll please... : ")
                 getMovie("Lawrence of Arabia");
             }
@@ -59,10 +59,10 @@ function getBand(band) { // function for concerts
 function getSong(song) {
 
 
-    if (song === undefined || null) {
-        getSong("The Sign Ace of Base");
-        console.log(getsong);
-    }
+    if (!song) { //if no song is selected, The Sign by Ace of Base is chosen
+        song = "The Sign Ace of Base";
+        console.log(song);
+    };
 
 
     spotify.search( // standard spotify search syntax
