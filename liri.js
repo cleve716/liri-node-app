@@ -59,9 +59,9 @@ function getBand(band) { // function for concerts
 function getSong(song) {
 
 
-    if (!song) { //if no song is selected, The Sign by Ace of Base is chosen
-        song = "The Sign Ace of Base";
-        console.log(song);
+    if (!song) { //if no song is selected, "Fish Heads" by Barnes and Barnes is chosen
+        song = "Fish Heads Barnes and Barnes";
+        console.log("Thank you, Dr. Demento!");
     };
 
 
