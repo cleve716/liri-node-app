@@ -57,7 +57,8 @@ This will output the following information from **imdb.com** to your terminal/ba
 > `node liri.js do-what-it says`
 
 Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands:
-    It will run `spotify-this-song` for the song "Do the Locomotion," as follows the text in random.txt.
+
+It will run `spotify-this-song` for the song "Do the Locomotion," as follows the text in random.txt.
 
 ![Movie](https://github.com/cleve716/liri-node-app/blob/master/images/do_what.gif)
 
