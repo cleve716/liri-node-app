@@ -2,7 +2,7 @@ The LIRI-NODE-APP is a command line node app that takes in parameters, and gives
 
 >WHAT EACH COMMAND WILL DO:
 
-<span style="background-color: #E6E6FA">node liri.js concert-this <artist/band name here></span>
+`node liri.js concert-this <artist/band name here>`
 
 This will search the Bands in Town Artist Events API for an artist and render the following information about each event to the terminal:
 
