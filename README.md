@@ -1,6 +1,6 @@
-# The LIRI-NODE-APP is a command line node app that takes in parameters, and returns data.
+# The LIRI-NODE-APP is a command line node app that takes in parameters, then returns data.
 
-## WHAT EACH COMMAND WILL DO:
+## COMMANDS:
 
 
 > `node liri.js concert-this <artist/band name here> `
