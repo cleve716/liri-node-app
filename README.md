@@ -60,4 +60,9 @@ This will output the following information from **imdb.com** to your terminal/ba
 
     *It will run `spotify-this-song` for the song "Do the Locomotion," as follows the text in random.txt.
 
+    ![Movie](https://github.com/cleve716/liri-node-app/blob/master/images/movie_this.gif)
+---
+---
+
+
 
