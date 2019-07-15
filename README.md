@@ -14,7 +14,8 @@ This will search the Bands in Town Artist Events API for an artist and render th
 
 ![Concert](https://github.com/cleve716/liri-node-app/blob/master/images/concert_this.gif)
 
-
+---
+---
 > `node liri.js spotify-this-song <song name here>`
 
 This will show the following information about the song in your terminal/bash window:
@@ -30,6 +31,8 @@ This will show the following information about the song in your terminal/bash wi
 
 
 
+---
+---
 
 > `node liri.js movie-this <movie name here>`
 
@@ -48,6 +51,8 @@ This will output the following information from **imdb.com** to your terminal/ba
 
 ![Movie](https://github.com/cleve716/liri-node-app/blob/master/images/movie_this.gif)
 
+---
+---
 
 > `node liri.js do-what-it says`
 
